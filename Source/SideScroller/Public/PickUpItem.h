@@ -4,6 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/CapsuleComponent.h"
+#include "Engine/Engine.h"
+#include "Kismet/GameplayStatics.h"
+
 
 #include "ST_Items.h"
 #include "PickUpItem.generated.h"
@@ -28,4 +32,34 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Inventory")
 	FSTItems Values;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Mesh")
+	USceneComponent* SceneRoot;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Mesh")
+	UStaticMeshComponent* StaticMesh2;
+
+	UPROPERTY(VisibleAnywhere, Category = "Trigger Capsule")
+	class UCapsuleComponent* TriggerCapsule;
+	
+	UFUNCTION()
+	virtual void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	
+	UFUNCTION()
+	virtual void FunZione();
+
+//	UPROPERTY()
+//	//SideScrollerCharacter* MyCharacter = AshooterController * SHC = Cast <SideSCrollerCharacter>()
+//
+//	UPROPERTY()
+//	//AActor* Xaaa = Cast<AActor*>(Xaaa->UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
+//
+//	UPROPERTY()
+//	//AActor* Char = UGameplayStatics::GetPlayerCharacter(GetWorld(),0);
+//
+	
+	
+	
+
 };
+
+

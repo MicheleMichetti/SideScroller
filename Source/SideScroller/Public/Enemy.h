@@ -29,6 +29,13 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Stats")
 	int32 Damage = 10;
 
-	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Mesh")
+		USceneComponent* SceneRoot;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Mesh")
+		UStaticMeshComponent* StaticMesh;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Mesh")
+		UStaticMeshComponent* StaticMesh2;
 
 };
